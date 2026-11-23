@@ -1,29 +1,29 @@
-# Grade 4 Maths Exam Practice
+# Maths Quest — Grade 4 Revision
 
-A responsive Next.js app for Grade 4 Mathematics revision.
-
-## Features
-- 40-question practice test with immediate PASS/FAIL marking
-- If an answer is wrong, the correct answer and explanation appear immediately
-- If an answer is correct, the answer is not separately revealed
-- End-of-test total, percentage, passed and failed totals
-- Full breakdown of failed questions with learner answer and correct answer
-- A new question for each unique failed topic on the personalised retest
-- Reset clears all progress and returns to the start screen
+A responsive, static study app built from the 40-question *Grade 4 Mathematics: November Revision Test 4* scan. It runs in any modern browser and needs no build step or server-side services.
 
 ## Run locally
-Install Node.js, then run:
-```bash
-npm install
-npm run dev
-```
-Open http://localhost:3000.
+
+Open `index.html` in a browser. Progress is saved in that browser on the device using local storage.
 
 ## Deploy to Vercel
-1. Upload the contents of this folder to a GitHub repository.
-2. In Vercel, import that repository as a new project.
-3. Framework preset: Next.js. No environment variables are required.
-4. Deploy.
 
-## Important source note
-The original PDF scan was faint in several diagram/tally/scale areas. The earlier app recreated a few unclear diagram-based items as text practice questions and noted those items for checking against the paper. This rebuild preserves that same practice-question bank and the requested exam/retest behaviour; it does not claim every question is a verbatim transcription of the scanned PDF.
+1. Put `index.html`, `styles.css`, `app.js`, and `vercel.json` in the root of a GitHub repository (or import this project folder with the Vercel CLI).
+2. In Vercel, choose **Add New → Project** and import the repository.
+3. Select **Other** as the framework preset. Leave the build command and output directory blank; the app is served directly from the project root.
+4. Click **Deploy**. Vercel will provide a shareable URL.
+
+There are no environment variables or API keys. Each learner's progress remains in that browser and is not shared between devices.
+
+## Included
+
+- One-question-at-a-time test mode with study notes shown throughout.
+- Immediate marking and correct-answer feedback for incorrect answers.
+- End-of-test score, percentage, and missed-question answer review.
+- Fresh, randomized retest questions for missed topics.
+- Mark adjustment controls for ambiguous written answers.
+- Reset confirmation and responsive mobile layout.
+
+## Source note
+
+The exam has printed and handwritten markings in the scan. The app uses the printed question prompts and independently entered answer key. Tally marks, graph values, measuring scales, and the jug reading were transcribed from the page images. A learner can adjust any mark using the review control.
